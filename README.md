@@ -1,5 +1,5 @@
 # maruhsoft.github.io
-Project Name: Technology Solutions Website
+Project Name: MaruhSoft Solutions Portfolio
 
 Description:
 This project is a responsive and interactive website that showcases a range of technology services offered by MaruhSoft Solutions. It provides information about various technology solutions such as web development, app development, game development, computer network engineering, cybersecurity, and machine learning.
