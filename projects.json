@@ -2,43 +2,43 @@
   {
     "id": 1,
     "title": "<span style=\"color: #4CAF50;\">Business Website</span>",
-    "description": "<span style=\"color: #333;\">A professional website for showcasing business services and information.<br>Includes a user-friendly interface and responsive design.<br><br>Click to view project: <a href=\"https://dummy-paystack-link.com\">here</a></span>",
+    "description": "<span style=\"color: #333;\">A professional website for showcasing business services and information.<br>Includes a user-friendly interface and responsive design.</span>",
     "link": "https://dummy-paystack-link.com"
   },
   {
     "id": 2,
     "title": "<span style=\"color: #4CAF50;\">Online Banking Website</span>",
-    "description": "<span style=\"color: #333;\">A secure online banking platform providing various financial services, transaction history, and account management.<br><br>Click to view project: <a href=\"https://dummy-paystack-link.com\">here</a></span>",
+    "description": "<span style=\"color: #333;\">A secure online banking platform providing various financial services, transaction history, and account management.</span>",
     "link": "https://dummy-paystack-link.com"
   },
   {
     "id": 3,
     "title": "<span style=\"color: #4CAF50;\">Courier Website</span>",
-    "description": "<span style=\"color: #333;\">An efficient courier service website with real-time tracking, order processing, and delivery management.<br><br>Click to view project: <a href=\"https://dummy-paystack-link.com\">here</a></span>",
+    "description": "<span style=\"color: #333;\">An efficient courier service website with real-time tracking, order processing, and delivery management.</span>",
     "link": "https://dummy-paystack-link.com"
   },
   {
     "id": 4,
     "title": "<span style=\"color: #4CAF50;\">Investment Broker</span>",
-    "description": "<span style=\"color: #333;\">A platform for investment brokerage, allowing users to manage and track their investments, analyze market trends, and make informed decisions.<br><br>Click to view project: <a href=\"https://dummy-paystack-link.com\">here</a></span>",
+    "description": "<span style=\"color: #333;\">A platform for investment brokerage, allowing users to manage and track their investments, analyze market trends, and make informed decisions.</span>",
     "link": "https://dummy-paystack-link.com"
   },
   {
     "id": 5,
     "title": "<span style=\"color: #4CAF50;\">Bitcoin Mining</span>",
-    "description": "<span style=\"color: #333;\">A Bitcoin mining application with advanced algorithms for efficient mining operations, monitoring, and performance optimization.<br><br>Click to view project: <a href=\"https://dummy-paystack-link.com\">here</a></span>",
+    "description": "<span style=\"color: #333;\">A Bitcoin mining application with advanced algorithms for efficient mining operations, monitoring, and performance optimization.</span>",
     "link": "https://dummy-paystack-link.com"
   },
   {
     "id": 6,
     "title": "<span style=\"color: #4CAF50;\">NFTs</span>",
-    "description": "<span style=\"color: #333;\">An NFT (Non-Fungible Token) platform for buying, selling, and trading unique digital assets.<br>Includes secure blockchain technology for authenticity.<br><br>Click to view project: <a href=\"https://dummy-paystack-link.com\">here</a></span>",
+    "description": "<span style=\"color: #333;\">An NFT (Non-Fungible Token) platform for buying, selling, and trading unique digital assets.<br>Includes secure blockchain technology for authenticity.</span>",
     "link": "https://dummy-paystack-link.com"
   },
   {
     "id": 7,
     "title": "<span style=\"color: #4CAF50;\">Mobile Apps</span>",
-    "description": "<span style=\"color: #333;\">Customized mobile applications tailored to meet specific user needs.<br>Featuring intuitive user interfaces and seamless functionality.<br><br>Click to view project: <a href=\"https://dummy-paystack-link.com\">here</a></span>",
+    "description": "<span style=\"color: #333;\">Customized mobile applications tailored to meet specific user needs.<br>Featuring intuitive user interfaces and seamless functionality.</span>",
     "link": "https://dummy-paystack-link.com"
   }
 ]
