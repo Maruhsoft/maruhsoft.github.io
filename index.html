@@ -1,243 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>MaruhSoft Solutions - Portfolio</title>
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Maruh Akporowho, Portfolio, Web Development, Technology, Projects">
+  <meta name="description" content="Welcome to my portfolio website. I'm Maruh Akporowho, a tech enthusiast and developer with expertise in mobile app development, full stack web development, computer networking, cyber security, ethical hacking, AI (machine learning), cloud computing, version control (Git), repository (GitHub), database, application container (Docker), full stack web frameworks, frontend web frameworks, API architecture (REST API), microservices architecture, pipelines (GitHub Actions), and Linux. Connect with me on LinkedIn and GitHub. Email: maruh.akporowho@gmail.com">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .page {
+      padding: 20px;
+      overflow-y: scroll;
+      height: calc(100vh - 50px); /* Adjust the height based on your needs */
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .contact-details {
+      margin-top: 20px;
+    }
+
+    .contact-details a {
+      margin-right: 10px;
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    .project {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .project h2 {
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #4CAF50; /* Green color for project names */
+    }
+
+    .project p {
+      color: #333; /* Dark gray color for project descriptions */
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form label {
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      margin-bottom: 16px;
+      padding: 8px;
+    }
+
+    .contact-form button {
+      padding: 10px;
+      cursor: pointer;
+      background-color: #007bff; /* Blue color for the submit button */
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .error-message {
+      color: #ff0000;
+      margin-bottom: 10px;
+    }
+
+    .payment-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #333;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #bottom-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    #bottom-nav a:hover {
+      background-color: #555;
+    }
+
+    #bottom-nav a.active {
+      background-color: #555;
+    }
+  </style>
+  <link rel="icon" href="https://icons8.com/icon/p5n5ZAUprZsA/location" type="image/png">
+  <link rel="shortcut icon" href="https://icons8.com/icon/p5n5ZAUprZsA/location" type="image/png">
+  <title>Maruh Akporowho - Portfolio</title>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
-<body class="is-preload">
+<body>
 
-	<!-- Sidebar -->
-	<section id="sidebar">
-		<div class="inner">
-			<nav>
-				<ul>
-					<li><a href="#intro">Welcome</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#services">Services</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</section>
+  <!-- Home Page -->
+  <div id="home" class="page">
+    <div class="card">
+      <h1 style="color: #4CAF50;">Welcome to my portfolio website</h1>
+      <p style="color: #333;">I'm <span style="font-weight: bold; color: #007bff;">Maruh Akporowho</span>, a tech enthusiast and developer with expertise in the following areas;</p>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+      <!-- Skills and Technologies -->
+      <ul>
+        <li>Mobile App Development</li>
+        <li>Full Stack Web Development</li>
+        <li>Computer Networking</li>
+        <li>Cyber Security</li>
+        <li>Ethical Hacking</li>
+        <li>AI (Machine Learning)</li>
+        <li>Cloud Computing</li>
+        <li>Version Control (Git)</li>
+        <li>Repository (GitHub)</li>
+        <li>Database</li>
+        <li>Application Container (Docker)</li>
+        <li>Full Stack Web Frameworks</li>
+        <li>Frontend Web Frameworks</li>
+        <li>API Architecture (REST API)</li>
+        <li>Microservices Architecture</li>
+        <li>Pipelines (GitHub Actions)</li>
+        <li>Linux</li>
+      </ul>
 
-		<!-- Introduction -->
-		<section id="intro" class="wrapper style1 fullscreen fade-up">
-			<div class="inner">
-				<h1>Maruh Phronesis Vulcan Akporowho</h1>
-				<p>Web Developer | App Developer | 2D and 3D Game Developer | Computer Network Engineer | Cyber Security Specialist | Machine Learning Enthusiast</p>
-				<ul class="actions">
-					<li><a href="#about" class="button scrolly">Learn more</a></li>
-				</ul>
-			</div>
-		</section>
+      <!-- Contact Details -->
+      <div class="contact-details">
+        <p style="color: #333;">Connect with me:</p>
+        <a href="https://www.linkedin.com/in/maruh-akporowho-647159124" target="_blank" style="color: #007bff;">LinkedIn</a>
+        <a href="https://github.com/Maruhsoft" target="_blank" style="color: #007bff;">GitHub</a>
+        <p style="color: #333;">Email: maruh.akporowho@gmail.com</p>
+      </div>
+    </div>
+  </div>
 
-		<!-- About -->
-		<section id="about" class="wrapper style2 spotlights">
-			<section>
-					<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
-					<div class="content">
-						<div class="inner">
-							<h2>About Me</h2>
-							<p>Hi, I'm Maruh Phronesis Vulcan Akporowho, a highly skilled professional specializing in web development, app development, 2D and 3D game development, computer network engineering, cybersecurity, and machine learning. With a strong passion for technology and years of experience in the industry, I am dedicated to delivering innovative and impactful solutions to meet client needs.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">Learn more</a></li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				<section>
-					<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-					<div class="content">
-						<div class="inner">
-							<h2>Skills and Expertise</h2>
-							<p>I possess a comprehensive skill set and expertise across multiple domains, enabling me to provide holistic solutions to complex technology challenges. My areas of proficiency include web development, app development, game development, computer network engineering, cybersecurity, and machine learning. I stay up to date with the latest industry trends and technologies to ensure that my solutions are cutting-edge and impactful.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">Learn more</a></li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				<section>
-					<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-					<div class="content">
-						<div class="inner">
-							<h2>Experience</h2>
-							<p>With a wealth of experience in the field, I have successfully completed numerous projects for clients across various industries. I have a proven track record of delivering high-quality solutions that exceed client expectations. I am adept at understanding client requirements, translating them into technical specifications, and implementing robust and scalable solutions.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">Learn more</a></li>
-							</ul>
-						</div>
-					</div>
-				</section>
-		</section>
+  <!-- Projects Page -->
+  <div id="projects" class="page">
+    <div class="card">
+      <h1 style="color: #4CAF50;">Projects Page Content</h1>
 
-<!-- Services -->
-<section id="services" class="wrapper style3 fade-up">
-	<div class="inner">
-	  <h2>Services</h2>
-	  <p>I offer a wide range of services to cater to diverse technology needs. Whether you need a stunning website, a feature-rich mobile app, an immersive game, a robust network infrastructure, a secure cybersecurity framework, or cutting-edge machine learning solutions, I have got you covered.</p>
-	  <div class="features">
-		<section>
-			<span class="icon solid major fa-code"></span>
-		  <h3>Web Development</h3>
-		  <p>I create professional and responsive websites tailored to your specific requirements, ensuring a seamless user experience.</p>
-		  <ul>
-		    <li>HTML</li>
-		    <li>CSS</li>
-		    <li>JavaScript</li>
-			<li>Bootstrap</li>
-			<li>jQuery</li>
-		    <li>PHP</li>
-		    <li>Laravel</li>
-		    <li>React</li>
-		    <li>Angular</li>
-		    <li>Vue.js</li>
-		  </ul>
-		</section>
-		<section>
-			<span class="icon solid major fa-mobile-alt"></span>
-		  <h3>App Development</h3>
-		  <p>I develop cross-platform mobile applications that are intuitive, visually appealing, and highly functional.</p>
-		  <ul>
-		    <li>React Native</li>
-		    <li>Flutter</li>
-		    <li>Swift</li>
-		    <li>Kotlin</li>
-			<li>Java</li>
-		  </ul>
-		</section>
-		<section>
-			<span class="icon solid major fa-gamepad"></span>
-		  <h3>Game Development</h3>
-		  <p>I design and develop engaging 2D and 3D games for various platforms, providing immersive and captivating gaming experiences.</p>
-		  <ul>
-		    <li>Unity</li>
-		    <li>Unreal Engine</li>
-		    <li>C#</li>
-		    <li>C++</li>
-		  </ul>
-		</section>
-		<section>
-			<span class="icon solid major fa-network-wired"></span>
-		  <h3>Computer Network Engineering</h3>
-		  <p>I design and implement robust and scalable computer network infrastructures to ensure seamless connectivity and efficient data transfer.</p>
-		  <ul>
-		    <li>Cisco</li>
-		    <li>Juniper</li>
-		    <li>Network Protocols (TCP/IP, DNS, DHCP)</li>
-		    <li>Routing and Switching</li>
-		  </ul>
-		</section>
-		<section>
-			<span class="icon solid major fa-shield-alt"></span>
-		  <h3>Cybersecurity</h3>
-		  <p>I offer comprehensive cybersecurity solutions to safeguard your digital assets and protect against cyber threats.</p>
-		  <ul>
-		    <li>Network Security</li>
-		    <li>Web Application Security</li>
-		    <li>Penetration Testing</li>
-		    <li>Security Auditing</li>
-		  </ul>
-		</section>
-		<section>
-			<span class="icon solid major fa-brain"></span>
-		  <h3>Machine Learning</h3>
-		  <p>I leverage the power of machine learning algorithms to analyze data, derive valuable insights, and build intelligent systems.</p>
-		  <ul>
-		    <li>Python</li>
-		    <li>TensorFlow</li>
-		    <li>PyTorch</li>
-		    <li>Scikit-learn</li>
-		  </ul>
-		</section>
-	  </div>
-	  <ul class="actions">
-		<li><a href="#" class="button">Learn more</a></li>
-	  </ul>
-	</div>
-</section>
+      <!-- Project Dictionary -->
+      <script>
+        const projects = [
+          {
+            id: 1,
+            title: '<span style="color: #4CAF50;">Business Website</span>',
+            description: '<span style="color: #333;">A professional website for showcasing business services and information. Includes a user-friendly interface and responsive design.</span>'
+          },
+          {
+            id: 2,
+            title: '<span style="color: #4CAF50;">Online Banking Website</span>',
+            description: '<span style="color: #333;">A secure online banking platform providing various financial services, transaction history, and account management.</span>'
+          },
+          {
+            id: 3,
+            title: '<span style="color: #4CAF50;">Courier Website</span>',
+            description: '<span style="color: #333;">An efficient courier service website with real-time tracking, order processing, and delivery management.</span>'
+          },
+          {
+            id: 4,
+            title: '<span style="color: #4CAF50;">Investment Broker</span>',
+            description: '<span style="color: #333;">A platform for investment brokerage, allowing users to manage and track their investments, analyze market trends, and make informed decisions.</span>'
+          },
+          {
+            id: 5,
+            title: '<span style="color: #4CAF50;">Bitcoin Mining</span>',
+            description: '<span style="color: #333;">A Bitcoin mining application with advanced algorithms for efficient mining operations, monitoring, and performance optimization.</span>'
+          },
+          {
+            id: 6,
+            title: '<span style="color: #4CAF50;">NFTs</span>',
+            description: '<span style="color: #333;">An NFT (Non-Fungible Token) platform for buying, selling, and trading unique digital assets. Includes secure blockchain technology for authenticity.</span>'
+          },
+          {
+            id: 7,
+            title: '<span style="color: #4CAF50;">Mobile Apps</span>',
+            description: '<span style="color: #333;">Customized mobile applications tailored to meet specific user needs, featuring intuitive user interfaces and seamless functionality.</span>'
+          },
+                    // Add more projects as needed
+        ];
 
-  
+        // Display projects with payment buttons
+        projects.forEach(project => {
+          const projectDiv = document.createElement('div');
+          projectDiv.classList.add('project');
 
-		<!-- Contact -->
-		<section id="contact" class="wrapper style1 fade-up">
-			<div class="inner">
-				<h2>Contact</h2>
-				<p>Ready to discuss your project or have any questions? Feel free to reach out to me. I'm always excited to collaborate and help you achieve your technology goals.</p>
-				<div class="split style1">
-					<section>
-						<form method="post" action="#">
-							<div class="fields">
-								<div class="field half">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" required />
-								</div>
-								<div class="field half">
-									<label for="email">Email</label>
-									<input type="email" name="email" id="email" required />
-								</div>
-								<div class="field">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="5" required></textarea>
-								</div>
-							</div>
-							<ul class="actions">
-								<li><input type="submit" value="Send Message" class="primary" /></li>
-								<li><input type="reset" value="Reset" /></li>
-							</ul>
-						</form>
-					</section>
-					<section>
-						<ul class="contact">
-							<li>
-								<h3>Address</h3>
-								<span>FCT, Abuja<br />
-								Nigeria</span>
-							</li>
-							<li>
-								<h3>Email</h3>
-								<a href="mailto:maruhsoft@gmail.com">maruhsoft@gmail.com</a>
-							</li>
-							<li>
-								<h3>Social</h3>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								</ul>
-							</li>
-						</ul>
-					</section>
-				</div>
-			</div>
-		</section>
+          const projectTitle = document.createElement('h2');
+          projectTitle.innerHTML = project.title;
 
-		<!-- Footer -->
-		<footer id="footer" class="wrapper style1-alt">
-			<div class="inner">
-				<ul class="menu">
-					<li>&copy; 2023 MaruhSoft Solutions. All rights reserved.</li>
-				</ul>
-			</div>
-		</footer>
+          const projectDescription = document.createElement('p');
+          projectDescription.innerHTML = project.description;
 
-	</div>
+          const paymentButton = document.createElement('button');
+          paymentButton.classList.add('payment-button');
+          paymentButton.textContent = 'Purchase Project';
+          paymentButton.addEventListener('click', () => initiatePayment(project.id));
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+          projectDiv.appendChild(projectTitle);
+          projectDiv.appendChild(projectDescription);
+          projectDiv.appendChild(paymentButton);
 
+          document.getElementById('projects').appendChild(projectDiv);
+        });
+
+        // Paystack Payment Function
+        function initiatePayment(projectId) {
+          // Assume you have a server endpoint for creating payment transactions
+          fetch('https://your-server.com/initiate-payment', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ projectId }),
+          })
+          .then(response => response.json())
+          .then(data => {
+            // Initialize Paystack inline payment
+            const paystackHandler = PaystackPop.setup({
+              key: 'your-paystack-public-key',
+              email: 'buyer@example.com',
+              amount: data.amount,
+              ref: data.reference,
+              currency: 'NGN', // Change this to your currency code
+              callback: function (response) {
+                // Handle successful payment here
+                handlePaymentSuccess(response, projectId);
+              },
+              onClose: function () {
+                // Handle closure of the payment modal
+              },
+            });
+
+            paystackHandler.openIframe();
+          })
+          .catch(error => console.error('Error initiating payment:', error));
+        }
+
+        function handlePaymentSuccess(response, projectId) {
+          // Assume you have a server endpoint for verifying payment success
+          fetch('https://your-server.com/verify-payment', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ reference: response.reference }),
+          })
+          .then(response => response.json())
+          .then(data => {
+            // If payment is verified, send an email to maruhsoft@gmail.com
+            if (data.success) {
+              sendEmailNotification(projectId);
+            }
+          })
+          .catch(error => console.error('Error verifying payment:', error));
+        }
+
+        function sendEmailNotification(projectId) {
+          // Assume you have a server endpoint for sending email notifications
+          fetch('https://your-server.com/send-email-notification', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ projectId }),
+          })
+          .then(response => {
+            if (response.ok) {
+              console.log('Email notification sent successfully.');
+            } else {
+              console.error('Failed to send email notification.');
+            }
+          })
+          .catch(error => console.error('Error sending email notification:', error));
+        }
+      </script>
+    </div>
+  </div>
+
+  <!-- Contact Page -->
+  <div id="contact" class="page">
+    <div class="card">
+      <h1 style="color: #4CAF50;">Contact Page Content</h1>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button id="submitBtn" onclick="submitForm()">Send Message</button>
+        <p id="error" class="error-message"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation Menu -->
+  <nav id="bottom-nav">
+    <a href="#home" class="active">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- JavaScript to Handle Navigation and Form Submission -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const pages = document.querySelectorAll(".page");
+      const navLinks = document.querySelectorAll("#bottom-nav a");
+
+      function showPage(pageId) {
+        pages.forEach((page) => (page.style.display = "none"));
+        document.getElementById(pageId).style.display = "block";
+      }
+
+      function handleNavLinkClick(event) {
+        event.preventDefault();
+        const pageId = this.getAttribute("href").substring(1);
+        showPage(pageId);
+        navLinks.forEach((link) => link.classList.remove("active"));
+        this.classList.add("active");
+      }
+
+      navLinks.forEach((link) => link.addEventListener("click", handleNavLinkClick));
+
+      // Show the home page by default
+      showPage("home");
+    });
+
+    function submitForm() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+      const errorElement = document.getElementById("error");
+
+      // Simple email validation
+      if (!email.includes("@")) {
+        errorElement.textContent = "Invalid email address";
+        return;
+      }
+
+      // Assuming you have a server endpoint for handling form submissions
+      fetch('https://your-server.com/submit-contact-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert('Message sent successfully!');
+        } else {
+          errorElement.textContent = 'Failed to send message. Please try again.';
+        }
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+        errorElement.textContent = 'An unexpected error occurred. Please try again later.';
+      });
+    }
+  </script>
 </body>
 </html>
