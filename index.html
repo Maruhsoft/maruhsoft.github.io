@@ -6,6 +6,13 @@
   <meta name="keywords" content="Maruh Akporowho, Portfolio, Web Development, Technology, Projects">
   <meta name="description" content="Welcome to my portfolio website. I'm Maruh Akporowho, a tech enthusiast and developer with expertise in mobile app development, full stack web development, computer networking, cyber security, ethical hacking, AI (machine learning), cloud computing, version control (Git), repository (GitHub), database, application container (Docker), full stack web frameworks, frontend web frameworks, API architecture (REST API), microservices architecture, pipelines (GitHub Actions), and Linux. Connect with me on LinkedIn and GitHub. Email: maruh.akporowho@gmail.com">
   <style>
+    /* Styles for mobile */
+    @media only screen and (max-width: 767px) {
+      .desktop-message {
+        display: none; /* Hide on mobile */
+      }
+    }
+    
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -137,7 +144,11 @@
   <script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
 <body>
-
+  <!-- Message for larger screens -->
+  <div class="desktop-message">
+    This website is optimized for mobile viewing.
+  </div>
+  
   <!-- Home Page -->
   <div id="home" class="page">
     <div class="card">
