@@ -206,68 +206,33 @@
     <div class="card">
       <h1 style="color: #4CAF50;">Projects</h1>
 
-      <!-- Project Dictionary -->
       <script>
-        const projects = [
-          {
-            'id': 1,
-            'title': '<span style="color: #4CAF50;">Business Website</span>',
-            'description': '<span style="color: #333;">A professional website for showcasing business services and information.<br>Includes a user-friendly interface and responsive design.<br><br>Click to view project: <a href="https://dummy-paystack-link.com">here</a></span>'
-          },
-          {
-            'id': 2,
-            'title': '<span style="color: #4CAF50;">Online Banking Website</span>',
-            'description': '<span style="color: #333;">A secure online banking platform providing various financial services, transaction history, and account management.<br><br>Click to view project: <a href="https://dummy-paystack-link.com">here</a></span>'
-          },
-          {
-            'id': 3,
-            'title': '<span style="color: #4CAF50;">Courier Website</span>',
-            'description': '<span style="color: #333;">An efficient courier service website with real-time tracking, order processing, and delivery management.<br><br>Click to view project: <a href="https://dummy-paystack-link.com">here</a></span>'
-          },
-          {
-            'id': 4,
-            'title': '<span style="color: #4CAF50;">Investment Broker</span>',
-            'description': '<span style="color: #333;">A platform for investment brokerage, allowing users to manage and track their investments, analyze market trends, and make informed decisions.<br><br>Click to view project: <a href="https://dummy-paystack-link.com">here</a></span>'
-          },
-          {
-            'id': 5,
-            'title': '<span style="color: #4CAF50;">Bitcoin Mining</span>',
-            'description': '<span style="color: #333;">A Bitcoin mining application with advanced algorithms for efficient mining operations, monitoring, and performance optimization.<br><br>Click to view project: <a href="https://dummy-paystack-link.com">here</a></span>'
-          },
-          {
-            'id': 6,
-            'title': '<span style="color: #4CAF50;">NFTs</span>',
-            'description': '<span style="color: #333;">An NFT (Non-Fungible Token) platform for buying, selling, and trading unique digital assets.<br>Includes secure blockchain technology for authenticity.<br><br>Click to view project: <a href="https://dummy-paystack-link.com">here</a></span>'
-          },
-          {
-            'id': 7,
-            'title': '<span style="color: #4CAF50;">Mobile Apps</span>',
-            'description': '<span style="color: #333;">Customized mobile applications tailored to meet specific user needs.<br>Featuring intuitive user interfaces and seamless functionality.<br><br>Click to view project: <a href="https://dummy-paystack-link.com">here</a></span>'
-          }
-        ]        
+        fetch('projects.json')
+          .then(response => response.json())
+          .then(projects => {
+            projects.forEach(project => {
+              const projectDiv = document.createElement('div');
+              projectDiv.classList.add('project');
+              
+              const projectTitle = document.createElement('h2');
+              projectTitle.innerHTML = project.title;
 
-        // Display projects with payment buttons
-        projects.forEach(project => {
-          const projectDiv = document.createElement('div');
-          projectDiv.classList.add('project');
+              const projectDescription = document.createElement('p');
+              projectDescription.innerHTML = `${project.description}<br><br>Click to view project: <a href="${project.link}" target="_blank">here</a>`;
 
-          const projectTitle = document.createElement('h2');
-          projectTitle.innerHTML = project.title;
+              const paymentButton = document.createElement('button');
+              paymentButton.classList.add('payment-button');
+              paymentButton.textContent = 'Purchase Project';
+              paymentButton.addEventListener('click', () => initiatePayment(project.id));
 
-          const projectDescription = document.createElement('p');
-          projectDescription.innerHTML = project.description;
+              projectDiv.appendChild(projectTitle);
+              projectDiv.appendChild(projectDescription);
+              projectDiv.appendChild(paymentButton);
 
-          const paymentButton = document.createElement('button');
-          paymentButton.classList.add('payment-button');
-          paymentButton.textContent = 'Purchase Project';
-          paymentButton.addEventListener('click', () => initiatePayment(project.id));
-
-          projectDiv.appendChild(projectTitle);
-          projectDiv.appendChild(projectDescription);
-          projectDiv.appendChild(paymentButton);
-
-          document.getElementById('projects').appendChild(projectDiv);
-        });
+              document.getElementById('projects').appendChild(projectDiv);
+            });
+          })
+          .catch(error => console.error('Error fetching projects:', error));
 
         // Paystack Payment Function
         function initiatePayment(projectId) {
