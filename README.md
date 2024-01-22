@@ -1,39 +1,64 @@
-# maruhsoft.github.io
-Project Name: MaruhSoft Solutions Portfolio
+# Maruh Akporowho's Portfolio
 
-Description:
-This project is a responsive and interactive website that showcases a range of technology services offered by MaruhSoft Solutions. It provides information about various technology solutions such as web development, app development, game development, computer network engineering, cybersecurity, and machine learning.
+Welcome to my portfolio website showcasing my skills and projects. Feel free to explore and connect!
 
-The website highlights the expertise and skills of the professional in each service area, along with the technologies and frameworks used. It aims to attract potential clients and provide them with a clear understanding of the services offered.
+## Table of Contents
+- [Introduction](#introduction)
+- [Skills and Technologies](#skills-and-technologies)
+- [Projects](#projects)
+- [Contact](#contact)
 
-Key Features:
-- Detailed information about each service category
-- List of technologies and frameworks utilized in each service area
-- Responsive design for seamless viewing on different devices
-- Interactive elements and smooth user experience
-- Call-to-action buttons for further engagement (prefer emails)
+## Introduction
+I'm **Maruh Akporowho**, a passionate tech enthusiast and developer. This portfolio highlights my expertise in various areas, including mobile app development, full-stack web development, cyber security, AI (machine learning), and more.
 
-Technologies Used:
-- HTML
-- CSS
-- JavaScript
-- PHP
-- Laravel
-- React
-- Angular
-- Vue.js
-- React Native
-- Flutter
-- Unity
-- Unreal Engine
-- C#
-- C++
-- Cisco
-- Juniper
-- Python
-- TensorFlow
-- PyTorch
-- Scikit-learn
+## Skills and Technologies
+- Mobile App Development
+- Full Stack Web Development
+- Computer Networking
+- Cyber Security
+- Ethical Hacking
+- AI (Machine Learning)
+- Cloud Computing
+- Version Control (Git)
+- Repository (GitHub)
+- Database
+- Application Container (Docker)
+- Full Stack Web Frameworks
+- Frontend Web Frameworks
+- API Architecture (REST API)
+- Microservices Architecture
+- Pipelines (GitHub Actions)
+- Linux
 
-Feel free to explore the website to learn more about the technology solutions offered and how they can benefit your business.
+Connect with me on [LinkedIn](https://www.linkedin.com/in/maruh-akporowho-647159124) and [GitHub](https://github.com/Maruhsoft).
 
+## Projects
+Explore some of my exciting projects and collaborations:
+
+1. **Business Website**
+   - A professional website showcasing business services and information. Includes a user-friendly interface and responsive design.
+
+2. **Online Banking Website**
+   - A secure online banking platform providing various financial services, transaction history, and account management.
+
+3. **Courier Website**
+   - An efficient courier service website with real-time tracking, order processing, and delivery management.
+
+4. **Investment Broker**
+   - A platform for investment brokerage, allowing users to manage and track their investments, analyze market trends, and make informed decisions.
+
+5. **Bitcoin Mining**
+   - A Bitcoin mining application with advanced algorithms for efficient mining operations, monitoring, and performance optimization.
+
+6. **NFTs (Non-Fungible Tokens)**
+   - An NFT platform for buying, selling, and trading unique digital assets. Includes secure blockchain technology for authenticity.
+
+7. **Mobile Apps**
+   - Customized mobile applications tailored to meet specific user needs, featuring intuitive user interfaces and seamless functionality.
+
+## Contact
+Feel free to reach out to me. Let's connect and discuss opportunities.
+
+- LinkedIn: [Maruh Akporowho](https://www.linkedin.com/in/maruh-akporowho-647159124)
+- GitHub: [Maruhsoft](https://github.com/Maruhsoft)
+- Email: maruh.akporowho@gmail.com
