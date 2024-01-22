@@ -9,20 +9,20 @@
     /* Styles for larger screens and desktops */
     @media only screen and (min-width: 768px) {
       .page {
-        display: none; /* Hide entire body on larger screens */
+        visibility: hidden; /* Hide entire body on larger screens */
       }
       
       .desktop-message {
-        display: block; /* Show desktop message */
+        visibility: visible; /* Show desktop message */
       }
     }
     /* Styles for mobile */
     @media only screen and (max-width: 767px) {
-      body {
-        display: block; /* Show entire body on mobile */
+      .page {
+        visibility: visible; /* Show entire body on mobile */
       }
       .desktop-message {
-        display: none; /* Hide desktop message on mobile */
+        visibility: hidden; /* Hide desktop message on mobile */
       }
     }   
     
