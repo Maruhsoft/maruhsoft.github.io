@@ -310,24 +310,26 @@
 
   <!-- Contact Page -->
   <div id="contact" class="page hidder">
-    <div class="card">
-      <h1 style="color: #4CAF50;">Contact</h1>
+  <div class="card">
+    <h1 style="color: #4CAF50;">Contact</h1>
 
-      <!-- Contact Form -->
-      <div class="contact-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <p>How can I be of service? Feel free to reach out!</p>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-        <button id="submitBtn" onclick="submitForm()">Send Message</button>
-        <p id="error" class="error-message"></p>
-      </div>
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="4" placeholder="Type your message here" required></textarea>
+
+      <button id="submitBtn" onclick="submitForm()">Send Message</button>
+      <p id="error" class="error-message"></p>
     </div>
+  </div>
   </div>
 
   <!-- Bottom Navigation Menu -->
