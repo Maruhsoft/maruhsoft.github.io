@@ -171,6 +171,8 @@
     <div class="card">
       <h1 style="color: #4CAF50;">Home</h1>
 
+      <div id="google_translate_element"></div>
+
       <br>
 
       <div style="position: relative; width: 150px; height: 150px; overflow: hidden; border-radius: 50%; border: 3px solid #007bff; margin-right: 15px;">
@@ -217,6 +219,8 @@
   <div id="projects" class="page hidder">
     <div class="card">
       <h1 style="color: #4CAF50;">Projects</h1>
+
+      <div id="google_translate_element"></div>
 
       <script>
         fetch('projects.json')
@@ -325,6 +329,8 @@
   <div class="card">
     <h1 style="color: #4CAF50;">Contact</h1>
 
+    <div id="google_translate_element"></div>
+
     <!-- Contact Form -->
     <div class="contact-form">
       <p><b>How can I be of service? Feel free to reach out!</b></p>
@@ -411,5 +417,11 @@
       });
     }
   </script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
