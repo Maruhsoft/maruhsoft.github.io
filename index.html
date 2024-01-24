@@ -150,7 +150,7 @@
       background-color: #555;
     }
 
-      #code-container {
+    #code-container {
       font-family: 'Courier New', monospace;
       white-space: pre;
       overflow: hidden;
@@ -160,6 +160,8 @@
       overflow-y: auto;
       background-color: #1e1e1e;
       color: #d4d4d4;
+      height: 100%; /* Added height property */
+      box-sizing: border-box; /* Ensures padding is included in the total height */
     }
 
     #code-container::-webkit-scrollbar {
