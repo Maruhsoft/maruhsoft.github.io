@@ -149,6 +149,31 @@
     #bottom-nav a.active {
       background-color: #555;
     }
+
+      #code-container {
+      font-family: 'Courier New', monospace;
+      white-space: pre;
+      overflow: hidden;
+      border: 1px solid #333;
+      padding: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+    }
+
+    #code-container::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    #code-container::-webkit-scrollbar-thumb {
+      background-color: #555;
+      border-radius: 10px;
+    }
+
+    #code-container::-webkit-scrollbar-track {
+      background-color: #1e1e1e;
+    }
   </style>
   <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="shortcut icon" href="https://icons8.com/icon/p5n5ZAUprZsA/location" type="image/png">
@@ -204,6 +229,8 @@
         <li>Linux</li>
       </ul>
 
+      <div id="code-container"></div>
+
       <!-- Contact Details -->
       <div class="contact-details">
         <p style="color: #333;"><b>Connect with me:</b></p>
@@ -221,7 +248,7 @@
       <h1 style="color: #4CAF50;">Projects</h1>
 
       <script>
-        fetch('projects.json')
+        fetch('data/projects.json')
           .then(response => response.json())
           .then(projects => {
             projects.forEach(project => {
@@ -413,6 +440,40 @@
       });
     }
   </script>
+
+  <script>
+  async function fetchCodeSnippets() {
+    try {
+      const response = await fetch('data/snippets.json');
+      const snippets = await response.json();
+      return snippets;
+    } catch (error) {
+      console.error('Error fetching code snippets:', error);
+      return [];
+    }
+  }
+
+  const codeContainer = document.getElementById('code-container');
+
+  async function typeCode() {
+    const codeSnippets = await fetchCodeSnippets();
+    if (codeSnippets.length === 0) {
+      return;
+    }
+
+    codeContainer.textContent = ''; // Clear existing code
+    const lines = codeSnippets[Math.floor(Math.random() * codeSnippets.length)].split('\n');
+    lines.forEach((line, index) => {
+      setTimeout(() => {
+        codeContainer.textContent += line + '\n';
+        codeContainer.scrollTop = codeContainer.scrollHeight; // Auto-scroll to the bottom
+      }, index * 1000); // Adjust typing speed
+    });
+  }
+
+  setInterval(typeCode, 5000); // Change code every 5 seconds initially
+  </script>
+  
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
