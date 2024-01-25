@@ -235,6 +235,11 @@
         <li>Linux</li>
       </ul>
 
+      <h1>Client Information</h1>
+      <p id="ip-address">Fetching IP address...</p>
+      <p id="browser-info">Fetching browser information...</p>
+      <p id="device-info">Fetching device information...</p>
+
       <div id="code-container"></div>
 
       <!-- Contact Details -->
@@ -483,6 +488,34 @@
   }
 
   setInterval(typeCode, 10000); // Change code every 5 seconds initially
+  </script>
+
+  <script>
+    async function getClientIP() {
+      try {
+        const response = await fetch('https://api64.ipify.org?format=json');
+        const data = await response.json();
+        const ipAddress = data.ip;
+        document.getElementById('ip-address').textContent = `Your IP address is: ${ipAddress}`;
+      } catch (error) {
+        console.error('Error fetching IP address:', error);
+        document.getElementById('ip-address').textContent = 'Unable to fetch IP address';
+      }
+    }
+
+    function getBrowserInfo() {
+      const browserInfo = `Browser: ${navigator.userAgent}`;
+      document.getElementById('browser-info').textContent = browserInfo;
+    }
+
+    function getDeviceInfo() {
+      const deviceInfo = `Device: ${navigator.platform}`;
+      document.getElementById('device-info').textContent = deviceInfo;
+    }
+
+    getClientIP();
+    getBrowserInfo();
+    getDeviceInfo();
   </script>
   
   <script type="text/javascript">
