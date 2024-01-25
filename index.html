@@ -446,13 +446,12 @@
         // Simple validation
         if (!name || !email || !message) {
             showError('Please fill out all fields');
+            return;
+        }
 
-            // Simple email validation
-            if (!email.includes("@")) {
-              errorElement.textContent = "Invalid email address";
-              return;
-            }
-          
+        // Email format validation
+        if (!validateEmail(email)) {
+            showError('Please enter a valid email address');
             return;
         }
 
@@ -478,6 +477,11 @@
 
         // Clear success message if any
         document.getElementById('success').textContent = '';
+    }
+
+    function validateEmail(email) {
+        // Basic email format validation
+        return /\S+@\S+\.\S+/.test(email);
     }
 
     function showSuccess(message) {
