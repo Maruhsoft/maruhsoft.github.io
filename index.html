@@ -221,24 +221,8 @@
 
       <!-- Skills and Technologies -->
       <h2 style="color: #4CAF50;">Skills</h2>
-        <ul>
-        <li>Mobile App Development</li>
-        <li>Full Stack Web Development</li>
-        <li>Computer Networking</li>
-        <li>Cyber Security</li>
-        <li>Ethical Hacking</li>
-        <li>AI (Machine Learning)</li>
-        <li>Cloud Computing</li>
-        <li>Version Control (Git)</li>
-        <li>Repository (GitHub)</li>
-        <li>Database</li>
-        <li>Application Container (Docker)</li>
-        <li>Full Stack Web Frameworks</li>
-        <li>Frontend Web Frameworks</li>
-        <li>API Architecture (REST API)</li>
-        <li>Microservices Architecture</li>
-        <li>Pipelines (GitHub Actions)</li>
-        <li>Linux</li>
+      <ul id="skills-container">
+        <!-- Skills will be displayed here -->
       </ul>
       
       <div id="code-container"></div>
@@ -556,9 +540,35 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Geolocation is not supported by your browser');
   }
 });
-  </script>
-  
-  <script type="text/javascript">
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Fetch skills from the JSON file
+  fetch('data/skills.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch skills');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Extract skills from the JSON data
+      const skills = data.skills;
+
+      // Display the skills on your website
+      const skillsList = document.getElementById('skills-container');
+      skills.forEach(skill => {
+        const listItem = document.createElement('li');
+        listItem.innerText = skill;
+        skillsList.appendChild(listItem);
+      });
+    })
+    .catch(error => console.error('Error fetching skills:', error.message));
+});
+</script>
+      
+<script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
     }
