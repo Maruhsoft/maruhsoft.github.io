@@ -152,15 +152,14 @@
 
     #code-container {
       font-family: 'Courier New', monospace;
-      white-space: pre;
-      overflow: hidden;
+      white-space: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
       border: 1px solid #333;
       padding: 10px;
-      max-height: 500px;
-      overflow-y: auto;
+      height: 300px;
       background-color: #1e1e1e;
       color: #d4d4d4;
-      height: 100%;
       box-sizing: border-box;
     }
 
@@ -169,7 +168,7 @@
     }
 
     #code-container::-webkit-scrollbar {
-      width: 12px;
+      height: 12px;
     }
 
     #code-container::-webkit-scrollbar-thumb {
@@ -467,7 +466,7 @@
       return;
     }
 
-    codeContainer.innerHTML = ''; // Clear existing code
+    codeContainer.textContent = ''; // Clear existing code
     const line = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
     let index = 0;
 
@@ -475,7 +474,7 @@
       const paragraph = document.createElement('p');
       paragraph.textContent = line.slice(0, index);
       codeContainer.appendChild(paragraph);
-      codeContainer.scrollTop = codeContainer.scrollHeight; // Auto-scroll to the bottom
+      codeContainer.scrollLeft = codeContainer.scrollWidth; // Auto-scroll to the right
 
       if (index < line.length) {
         index++;
