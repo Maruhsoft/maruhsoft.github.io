@@ -25,25 +25,12 @@
     "CSS3",
     "React",
     "Angular",
-    "Vue.js",
     "Node.js",
-    "Express.js",
     "Spring Boot",
     "SQL",
-    "MongoDB",
     "Firebase",
-    "AWS",
-    "Azure",
     "Google Cloud Platform",
-    "Jenkins",
-    "Terraform",
-    "Ansible",
     "Kubernetes",
-    "OWASP tools",
-    "SonarQube",
-    "Slack",
-    "Microsoft Teams",
-    "Confluence",
-    "Wiki"
+    "Slack"
   ]
 }
