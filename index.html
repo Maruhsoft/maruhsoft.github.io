@@ -515,34 +515,46 @@
 
   <script>
 document.addEventListener('DOMContentLoaded', () => {
+  const weatherContainer = document.getElementById('weather-container');
+
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(position => {
-      const apiKey = '42ce8722feabf2bc4750dbff331a8a0e';
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        const apiKey = '42ce8722feabf2bc4750dbff331a8a0e';
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
 
-      // Fetch weather data based on user's location
-      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`)
-        .then(response => response.json())
-        .then(data => {
-          // Extract relevant weather information from the API response
-          const city = data.name;
-          const temperature = data.main.temp;
-          const description = data.weather[0].description;
+        // Fetch weather data based on user's location
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`)
+          .then(response => response.json())
+          .then(data => {
+            // Extract relevant weather information from the API response
+            const city = data.name;
+            const temperature = data.main.temp;
+            const description = data.weather[0].description;
 
-          // Display the weather information on your website
-          const weatherInfo = `Current weather in ${city}: ${temperature}°C, ${description}`;
-          document.getElementById('weather-container').innerText = weatherInfo;
-        })
-        .catch(error => console.error('Error fetching weather data:', error));
-    });
+            // Display the weather information on your website
+            const weatherInfo = `Current weather in ${city}: ${temperature}°C, ${description}`;
+            weatherContainer.innerText = weatherInfo;
+          })
+          .catch(error => console.error('Error fetching weather data:', error));
+      },
+      error => {
+        if (error.code === 1) {
+          // Handle case where user denies access to location
+          weatherContainer.innerText = 'Please enable location services to get weather information.';
+        } else {
+          console.error('Error getting current position:', error);
+        }
+      }
+    );
   } else {
     console.error('Geolocation is not supported by your browser');
   }
 });
-</script>
-
-<script>
+  </script>
+  
+  <script>
 document.addEventListener('DOMContentLoaded', () => {
   // Fetch skills from the JSON file
   fetch('data/skills.json')
