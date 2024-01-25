@@ -61,4 +61,4 @@ Feel free to reach out to me. Let's connect and discuss opportunities.
 
 - LinkedIn: [Maruh Akporowho](https://www.linkedin.com/in/maruh-akporowho-647159124)
 - GitHub: [Maruhsoft](https://github.com/Maruhsoft)
-- Email: maruh.akporowho@gmail.com
+- Email: maruhsoft@gmail.com
