@@ -161,6 +161,7 @@
       background-color: #1e1e1e;
       color: #d4d4d4;
       box-sizing: border-box;
+      display: flex; /* Use flex display to allow horizontal scrolling */
     }
 
     #code-container p {
@@ -468,21 +469,19 @@
 
     codeContainer.textContent = ''; // Clear existing code
     const line = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
-    let index = 0;
 
-    function addCharacter() {
+    function addCharacter(index) {
       const paragraph = document.createElement('p');
       paragraph.textContent = line.slice(0, index);
       codeContainer.appendChild(paragraph);
       codeContainer.scrollLeft = codeContainer.scrollWidth; // Auto-scroll to the right
 
       if (index < line.length) {
-        index++;
-        setTimeout(addCharacter, 50); // Adjust typing speed
+        setTimeout(() => addCharacter(index + 1), 50); // Adjust typing speed
       }
     }
 
-    addCharacter();
+    addCharacter(0);
   }
 
   setInterval(typeCode, 5000); // Change code every 5 seconds initially
