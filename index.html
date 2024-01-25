@@ -471,9 +471,7 @@
     const line = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
 
     function addCharacter(index) {
-      const paragraph = document.createElement('p');
-      paragraph.textContent = line.slice(0, index);
-      codeContainer.appendChild(paragraph);
+      codeContainer.textContent = line.slice(0, index);
       codeContainer.scrollLeft = codeContainer.scrollWidth; // Auto-scroll to the right
 
       if (index < line.length) {
