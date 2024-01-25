@@ -180,6 +180,11 @@
     #code-container::-webkit-scrollbar-track {
       background-color: #1e1e1e;
     }
+
+    p.client-info {
+      margin-bottom: 8px; /* Adjust the margin to control line spacing */
+    }
+    
   </style>
   <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="shortcut icon" href="https://icons8.com/icon/p5n5ZAUprZsA/location" type="image/png">
@@ -236,10 +241,10 @@
       </ul>
 
       <h2 style="color: #4CAF50;">Client Information</h2>
-      <p id="ip-address">Fetching IP address...</p>
-      <p id="browser-info">Fetching browser information...</p>
-      <p id="device-info">Fetching device information...</p>
-
+      <p class="client-info"><strong>Browser:</strong> <span id="browser-info">Fetching browser information...</span></p>
+      <p class="client-info"><strong>Device:</strong> <span id="device-info">Fetching device information...</span></p>
+      <p class="client-info"><strong>Your IP address is:</strong> <span id="ip-address">Fetching IP address...</span></p>
+      
       <div id="code-container"></div>
 
       <!-- Contact Details -->
@@ -496,7 +501,7 @@
         const response = await fetch('https://api64.ipify.org?format=json');
         const data = await response.json();
         const ipAddress = data.ip;
-        document.getElementById('ip-address').textContent = `<b>Your IP address is:</b> ${ipAddress}`;
+        document.getElementById('ip-address').textContent = `Your IP address is: ${ipAddress}`;
       } catch (error) {
         console.error('Error fetching IP address:', error);
         document.getElementById('ip-address').textContent = 'Unable to fetch IP address';
@@ -504,12 +509,12 @@
     }
 
     function getBrowserInfo() {
-      const browserInfo = `<b>Browser:</b> ${navigator.userAgent}`;
+      const browserInfo = `Browser: ${navigator.userAgent}`;
       document.getElementById('browser-info').textContent = browserInfo;
     }
 
     function getDeviceInfo() {
-      const deviceInfo = `<b>Device:</b> ${navigator.platform}`;
+      const deviceInfo = `Device: ${navigator.platform}`;
       document.getElementById('device-info').textContent = deviceInfo;
     }
 
