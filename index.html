@@ -475,14 +475,14 @@
       codeContainer.scrollLeft = codeContainer.scrollWidth; // Auto-scroll to the right
 
       if (index < line.length) {
-        setTimeout(() => addCharacter(index + 1), 50); // Adjust typing speed
+        setTimeout(() => addCharacter(index + 1), 200); // Adjust typing speed
       }
     }
 
     addCharacter(0);
   }
 
-  setInterval(typeCode, 5000); // Change code every 5 seconds initially
+  setInterval(typeCode, 10000); // Change code every 5 seconds initially
   </script>
   
   <script type="text/javascript">
