@@ -446,13 +446,14 @@
         // Simple validation
         if (!name || !email || !message) {
             showError('Please fill out all fields');
-            return;
-        }
 
-        // Simple email validation
-        if (!email.includes("@")) {
-          errorElement.textContent = "Invalid email address";
-          return;
+            // Simple email validation
+            if (!email.includes("@")) {
+              errorElement.textContent = "Invalid email address";
+              return;
+            }
+          
+            return;
         }
 
         const subject = encodeURIComponent('New Message from Your Website');
@@ -463,7 +464,7 @@
         window.location.href = mailtoLink;
 
         // Display success message (since we cannot confirm the email was actually sent)
-        showSuccess('Email sent successfully!');
+        showSuccess('Continue sending from your email client!');
     }
 
     function getValue(id) {
