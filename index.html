@@ -396,7 +396,7 @@
       <label for="message">Your Message:</label>
       <textarea id="message" rows="4" placeholder="Type your message here" required></textarea>
 
-      <button onclick="sendEmail()">Send Message</button>
+      <button onclick="validateAndSendEmail()">Send Message</button>
       <p id="error" class="error-message"></p>
       <p id="success" class="success-message"></p>
     </div>
@@ -438,7 +438,7 @@
   </script>
 
   <script>
-    function sendEmail() {
+    function validateAndSendEmail() {
         const name = getValue('name');
         const email = getValue('email');
         const message = getValue('message');
@@ -455,6 +455,16 @@
             return;
         }
 
+        // Send email
+        sendEmail(name, email, message);
+    }
+
+    function validateEmail(email) {
+        // Basic email format validation
+        return /\S+@\S+\.\S+/.test(email);
+    }
+
+    function sendEmail(name, email, message) {
         const subject = encodeURIComponent('New Message from Your Website');
         const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
         const mailtoLink = `mailto:maruhsoft@gmail.com?subject=${subject}&body=${body}`;
@@ -479,11 +489,6 @@
         document.getElementById('success').textContent = '';
     }
 
-    function validateEmail(email) {
-        // Basic email format validation
-        return /\S+@\S+\.\S+/.test(email);
-    }
-
     function showSuccess(message) {
         const successElement = document.getElementById('success');
         successElement.textContent = message;
@@ -492,7 +497,7 @@
         // Clear error message if any
         document.getElementById('error').textContent = '';
     }
-      </script>
+    </script>
 
   <script>
   async function fetchCodeSnippets() {
