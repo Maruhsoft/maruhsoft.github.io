@@ -248,6 +248,10 @@
       <p class="client-info"><strong>Device:</strong> <span id="device-info">Fetching device information...</span></p>
       <p class="client-info"><strong>Your IP address is:</strong> <span id="ip-address">Fetching IP address...</span></p>
 
+      <div id="weather-container">
+        <!-- Weather information will be displayed here -->
+      </div>
+
       <!-- Contact Details -->
       <div class="contact-details">
         <p style="color: #4CAF50; margin-bottom: 0px;"><b>Connect with me:</b></p>
@@ -522,6 +526,35 @@
     getClientIP();
     getBrowserInfo();
     getDeviceInfo();
+  </script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+      const apiKey = '42ce8722feabf2bc4750dbff331a8a0e';
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      // Fetch weather data based on user's location
+      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`)
+        .then(response => response.json())
+        .then(data => {
+          // Extract relevant weather information from the API response
+          const city = data.name;
+          const temperature = data.main.temp;
+          const description = data.weather[0].description;
+
+          // Display the weather information on your website
+          const weatherInfo = `Current weather in ${city}: ${temperature}°C, ${description}`;
+          document.getElementById('weather-container').innerText = weatherInfo;
+        })
+        .catch(error => console.error('Error fetching weather data:', error));
+    });
+  } else {
+    console.error('Geolocation is not supported by your browser');
+  }
+});
   </script>
   
   <script type="text/javascript">
