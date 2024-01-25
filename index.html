@@ -384,19 +384,21 @@
 
     <!-- Contact Form -->
     <div class="contact-form">
+      
       <p><b>How can I be of service? Feel free to reach out!</b></p>
-
+      
       <label for="name">Your Name:</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      <input type="text" id="name" placeholder="Enter your name" required>
 
       <label for="email">Your Email:</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <input type="email" id="email" placeholder="Enter your email" required>
 
       <label for="message">Your Message:</label>
-      <textarea id="message" name="message" rows="4" placeholder="Type your message here" required></textarea>
+      <textarea id="message" rows="4" placeholder="Type your message here" required></textarea>
 
-      <button id="submitBtn" onclick="submitForm()">Send Message</button>
+      <button onclick="sendEmail()">Send Message</button>
       <p id="error" class="error-message"></p>
+      <p id="success" class="success-message"></p>
     </div>
   </div>
   </div>
@@ -409,7 +411,7 @@
   </nav>
 
 
-  <!-- JavaScript to Handle Navigation and Form Submission -->
+  <!-- JavaScript to Handle Navigation -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const pages = document.querySelectorAll(".page");
@@ -433,41 +435,59 @@
       // Show the home page by default
       showPage("home");
     });
-
-    function submitForm() {
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
-      const errorElement = document.getElementById("error");
-
-      // Simple email validation
-      if (!email.includes("@")) {
-        errorElement.textContent = "Invalid email address";
-        return;
-      }
-
-      // Assuming you have a server endpoint for handling form submissions
-      fetch('https://your-server.com/submit-contact-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, message }),
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          alert('Message sent successfully!');
-        } else {
-          errorElement.textContent = 'Failed to send message. Please try again.';
-        }
-      })
-      .catch(error => {
-        console.error('Error submitting form:', error);
-        errorElement.textContent = 'An unexpected error occurred. Please try again later.';
-      });
-    }
   </script>
+
+  <script>
+    function sendEmail() {
+        const name = getValue('name');
+        const email = getValue('email');
+        const message = getValue('message');
+
+        // Simple validation
+        if (!name || !email || !message) {
+            showError('Please fill out all fields');
+            return;
+        }
+
+        // Simple email validation
+        if (!email.includes("@")) {
+          errorElement.textContent = "Invalid email address";
+          return;
+        }
+
+        const subject = encodeURIComponent('New Message from Your Website');
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
+        const mailtoLink = `mailto:maruhsoft@gmail.com?subject=${subject}&body=${body}`;
+
+        // Open the user's default email client
+        window.location.href = mailtoLink;
+
+        // Display success message (since we cannot confirm the email was actually sent)
+        showSuccess('Email sent successfully!');
+    }
+
+    function getValue(id) {
+        return document.getElementById(id).value;
+    }
+
+    function showError(message) {
+        const errorElement = document.getElementById('error');
+        errorElement.textContent = message;
+        errorElement.style.color = 'red';
+
+        // Clear success message if any
+        document.getElementById('success').textContent = '';
+    }
+
+    function showSuccess(message) {
+        const successElement = document.getElementById('success');
+        successElement.textContent = message;
+        successElement.style.color = 'green';
+
+        // Clear error message if any
+        document.getElementById('error').textContent = '';
+    }
+      </script>
 
   <script>
   async function fetchCodeSnippets() {
