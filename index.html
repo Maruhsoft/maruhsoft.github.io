@@ -203,6 +203,26 @@
       max-height: 100%;
     }
     
+    .search-container {
+      position: relative;
+      width: 100%;
+      margin-bottom: 20px; /* Added margin to separate h1 and search bar */
+    }
+    
+    /* Adjust the position of the magnifying glass icon */
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      right: 20px; /* Adjust the value as needed */
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    
+    /* Add a class for project container */
+    .project-container {
+      margin-top: 20px; /* Added margin to separate search bar and projects */
+    }
+    
   </style>
   <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="shortcut icon" href="https://icons8.com/icon/p5n5ZAUprZsA/location" type="image/png">
@@ -274,168 +294,23 @@
 
   <!-- Projects Page -->
   <div id="projects" class="page hidder">
-    <div class="card">
-        <h1 style="color: #4CAF50;">Projects</h1>
+        <div class="card">
+            <h1 style="color: #4CAF50;">Projects</h1>
 
-        <!-- Fancy Search Bar with Styling -->
-        <!--input type="text" id="searchBar" placeholder="Search projects..." style="margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 300px; font-size: 16px;"-->
-
-        <div style="position: relative; width: 300px;">
-                <input type="text" id="searchBar" placeholder="Search projects..." style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 86%; font-size: 16px;">
-                <span style="position: absolute; top: 50%; right: 24px; transform: translateY(-50%);" onclick="triggerSearch()">
+            <!-- Fancy Search Bar with Styling -->
+            <div class="search-container">
+                <input type="text" id="searchBar" placeholder="Search projects..." style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: calc(100% - 22px); font-size: 16px;">
+                <span class="search-icon" onclick="triggerSearch()">
                     <!-- You can replace the content of this span with your magnifying glass icon -->
                     &#128269;
                 </span>
+            </div>
+
+            <!-- Initial Projects Display -->
+            <div id="initialProjectsContainer" class="project-container"></div>
         </div>
-      </div>
   </div>
-
-        <script>
-          // Debounce Function
-function debounce(func, delay) {
-    let timer;
-    return function () {
-        const context = this;
-        const args = arguments;
-        clearTimeout(timer);
-        timer = setTimeout(() => func.apply(context, args), delay);
-    };
-}
-
-// Main Logic
-document.addEventListener('DOMContentLoaded', function () {
-    const searchBar = document.getElementById('searchBar');
-
-    fetch('data/projects.json')
-        .then(response => response.json())
-        .then(projects => {
-            const originalProjects = [...projects];
-
-            function tokenize(query) {
-                return query.toLowerCase().split(/\s+/);
-            }
-
-            function filterProjects(query) {
-                const tokens = tokenize(query);
-
-                return originalProjects.filter(project =>
-                    tokens.some(token =>
-                        project.title.toLowerCase().includes(token) ||
-                        project.description.toLowerCase().includes(token)
-                    )
-                );
-            }
-
-            function updateProjects() {
-                const searchQuery = searchBar.value;
-                const filteredProjects = filterProjects(searchQuery);
-
-                document.getElementById('projects').innerHTML = '';
-
-                filteredProjects.forEach(project => {
-                    const projectDiv = document.createElement('div');
-                    projectDiv.classList.add('project');
-
-                    const projectTitle = document.createElement('h2');
-                    projectTitle.innerHTML = project.title;
-
-                    const projectDescription = document.createElement('p');
-                    projectDescription.innerHTML = `${project.description}<br><br>Click to view project: <a href="${project.link}" target="_blank">here</a>`;
-
-                    const paymentButton = document.createElement('button');
-                    paymentButton.classList.add('payment-button');
-                    paymentButton.textContent = 'Purchase Project';
-                    paymentButton.addEventListener('click', () => initiatePayment(project.id));
-
-                    projectDiv.appendChild(projectTitle);
-                    projectDiv.appendChild(projectDescription);
-                    projectDiv.appendChild(paymentButton);
-
-                    document.getElementById('projects').appendChild(projectDiv);
-                });
-            }
-
-            const debouncedUpdate = debounce(updateProjects, 300); // Adjust the delay as needed
-
-            searchBar.addEventListener('input', debouncedUpdate);
-
-            updateProjects();
-        })
-        .catch(error => console.error('Error fetching projects:', error));
-
-    // Paystack Payment Function
-    function initiatePayment(projectId) {
-        // Assume you have a server endpoint for creating payment transactions
-        fetch('https://your-server.com/initiate-payment', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ projectId }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Initialize Paystack inline payment
-            const paystackHandler = PaystackPop.setup({
-                key: 'your-paystack-public-key',
-                email: 'buyer@example.com',
-                amount: data.amount,
-                ref: data.reference,
-                currency: 'NGN', // Change this to your currency code
-                callback: function (response) {
-                    // Handle successful payment here
-                    handlePaymentSuccess(response, projectId);
-                },
-                onClose: function () {
-                    // Handle closure of the payment modal
-                },
-            });
-
-            paystackHandler.openIframe();
-        })
-        .catch(error => console.error('Error initiating payment:', error));
-    }
-
-    function handlePaymentSuccess(response, projectId) {
-        // Assume you have a server endpoint for verifying payment success
-        fetch('https://your-server.com/verify-payment', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ reference: response.reference }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            // If payment is verified, send an email to maruhsoft@gmail.com
-            if (data.success) {
-                sendEmailNotification(projectId);
-            }
-        })
-        .catch(error => console.error('Error verifying payment:', error));
-    }
-
-    function sendEmailNotification(projectId) {
-        // Assume you have a server endpoint for sending email notifications
-        fetch('https://your-server.com/send-email-notification', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ projectId }),
-        })
-        .then(response => {
-            if (response.ok) {
-                console.log('Email notification sent successfully.');
-            } else {
-                console.error('Failed to send email notification.');
-            }
-        })
-        .catch(error => console.error('Error sending email notification:', error));
-    }
-});
-          
-        </script>
+  
   <!-- Contact Page -->
   <div id="contact" class="page hidder">
   <div class="card">
@@ -699,6 +574,67 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("splashScreen").style.display = "none";
   }, 10000); // 3000 milliseconds (3 seconds) in this example
 });
+</script>
+
+<script>
+        // Function to trigger the search
+        function triggerSearch() {
+            updateProjects(document.getElementById('searchBar').value);
+        }
+
+        // Function to initially load projects
+        function loadInitialProjects() {
+            fetchProjects('data/projects.json', 'initialProjectsContainer');
+        }
+
+        // Function to fetch and display projects
+        function fetchProjects(url, containerId) {
+            fetch(url)
+                .then(response => response.json())
+                .then(projects => {
+                    const projectContainer = document.getElementById(containerId);
+                    projectContainer.innerHTML = '';
+
+                    projects.forEach(project => {
+                        const projectDiv = document.createElement('div');
+                        projectDiv.classList.add('project');
+
+                        const projectTitle = document.createElement('h2');
+                        projectTitle.innerHTML = project.title;
+
+                        const projectDescription = document.createElement('p');
+                        projectDescription.innerHTML = `${project.description}<br><br>Click to view project: <a href="${project.link}" target="_blank">here</a>`;
+
+                        const paymentButton = document.createElement('button');
+                        paymentButton.classList.add('payment-button');
+                        paymentButton.textContent = 'Purchase Project';
+                        paymentButton.addEventListener('click', () => initiatePayment(project.id));
+
+                        projectDiv.appendChild(projectTitle);
+                        projectDiv.appendChild(projectDescription);
+                        projectDiv.appendChild(paymentButton);
+
+                        projectContainer.appendChild(projectDiv);
+                    });
+                })
+                .catch(error => console.error('Error fetching projects:', error));
+        }
+
+        // Function to update projects based on search
+        function updateProjects(searchQuery) {
+            const searchUrl = 'data/projects.json'; // Replace with your search endpoint
+            const projectContainer = document.getElementById('initialProjectsContainer');
+            
+            if (searchQuery && searchQuery.trim() !== '') {
+                fetchProjects(searchUrl + '?search=' + encodeURIComponent(searchQuery), 'initialProjectsContainer');
+            } else {
+                // If search query is empty, load initial projects
+                loadInitialProjects();
+            }
+        }
+
+        // Asynchronously load the initial projects
+        loadInitialProjects();
 </script>
       
 <script type="text/javascript">
