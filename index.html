@@ -671,6 +671,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // Function to handle key events in the search bar
+        function handleSearchKeyPress(event) {
+          if (event.key === 'Enter') {
+            updateProjects(document.getElementById('searchBar').value);
+          }
+        }
+
+        // Add event listener for 'keydown' event on the search bar
+        document.getElementById('searchBar').addEventListener('keydown', handleSearchKeyPress);
+
         // Asynchronously load the initial projects
         loadInitialProjects();
     </script>
