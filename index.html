@@ -620,13 +620,51 @@ document.addEventListener('DOMContentLoaded', () => {
                 .catch(error => console.error('Error fetching projects:', error));
         }
 
+        // Function to clear existing projects
+        function clearProjects(containerId) {
+            const projectContainer = document.getElementById(containerId);
+            projectContainer.innerHTML = '';
+        }
+
         // Function to update projects based on search
         function updateProjects(searchQuery) {
             const searchUrl = 'data/projects.json'; // Replace with your search endpoint
             const projectContainer = document.getElementById('initialProjectsContainer');
             
             if (searchQuery && searchQuery.trim() !== '') {
-                fetchProjects(searchUrl + '?search=' + encodeURIComponent(searchQuery), 'initialProjectsContainer');
+                clearProjects('initialProjectsContainer');
+
+                fetch(searchUrl)
+                    .then(response => response.json())
+                    .then(projects => {
+                        const filteredProjects = projects.filter(project => {
+                            const projectText = project.title.toLowerCase() + project.description.toLowerCase();
+                            return projectText.includes(searchQuery.toLowerCase());
+                        });
+
+                        filteredProjects.forEach(project => {
+                            const projectDiv = document.createElement('div');
+                            projectDiv.classList.add('project');
+
+                            const projectTitle = document.createElement('h2');
+                            projectTitle.innerHTML = project.title;
+
+                            const projectDescription = document.createElement('p');
+                            projectDescription.innerHTML = `${project.description}<br><br>Click to view project: <a href="${project.link}" target="_blank">here</a>`;
+
+                            const paymentButton = document.createElement('button');
+                            paymentButton.classList.add('payment-button');
+                            paymentButton.textContent = 'Purchase Project';
+                            paymentButton.addEventListener('click', () => initiatePayment(project.id));
+
+                            projectDiv.appendChild(projectTitle);
+                            projectDiv.appendChild(projectDescription);
+                            projectDiv.appendChild(paymentButton);
+
+                            projectContainer.appendChild(projectDiv);
+                        });
+                    })
+                    .catch(error => console.error('Error fetching and filtering projects:', error));
             } else {
                 // If search query is empty, load initial projects
                 loadInitialProjects();
@@ -635,7 +673,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Asynchronously load the initial projects
         loadInitialProjects();
-</script>
+    </script>
 
 <script>
   // Paystack Payment Function
