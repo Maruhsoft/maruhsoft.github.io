@@ -169,12 +169,6 @@
   },
   {
     "id": 29,
-    "title": "<span style=\"color: #4CAF50;\">Healthcare Management System</span>",
-    "description": "<span style=\"color: #333;\">Develop a comprehensive system for healthcare facilities, including patient records, appointment scheduling, and prescription management.</span>",
-    "link": "#"
-  },
-  {
-    "id": 30,
     "title": "<span style=\"color: #4CAF50;\">E-commerce Platform</span>",
     "description": "<span style=\"color: #333;\">Create a robust e-commerce platform with features such as product catalog, secure transactions, and order management.<br>Integration with popular payment gateways for seamless transactions.</span>",
     "link": "#"
