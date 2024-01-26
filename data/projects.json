@@ -1,44 +1,182 @@
 [
   {
     "id": 1,
-    "title": "<span style=\"color: #4CAF50;\">Business Website</span>",
-    "description": "<span style=\"color: #333;\">A professional website for showcasing business services and information.<br>Includes a user-friendly interface and responsive design.</span>",
-    "link": "https://paystack.com/buy/mobile-apps-rtlkjk"
+    "title": "<span style=\"color: #4CAF50;\">Freelancer Marketplace</span>",
+    "description": "<span style=\"color: #333;\">Develop a platform connecting freelancers with clients, featuring profiles, project listings, and secure payment systems.</span>",
+    "link": "#"
   },
   {
     "id": 2,
-    "title": "<span style=\"color: #4CAF50;\">Online Banking Website</span>",
-    "description": "<span style=\"color: #333;\">A secure online banking platform providing various financial services, transaction history, and account management.</span>",
-    "link": "https://paystack.com/buy/mobile-apps-rtlkjk"
+    "title": "<span style=\"color: #4CAF50;\">Automated Stock Trading System</span>",
+    "description": "<span style=\"color: #333;\">Implement an AI-powered stock trading system with automated buying and selling based on market analysis and user-defined strategies.</span>",
+    "link": "#"
   },
   {
     "id": 3,
-    "title": "<span style=\"color: #4CAF50;\">Courier Website</span>",
-    "description": "<span style=\"color: #333;\">An efficient courier service website with real-time tracking, order processing, and delivery management.</span>",
-    "link": "https://paystack.com/buy/mobile-apps-rtlkjk"
+    "title": "<span style=\"color: #4CAF50;\">E-commerce Platform</span>",
+    "description": "<span style=\"color: #333;\">Create a robust e-commerce platform with features such as product catalog, secure transactions, and order management.<br>Integration with popular payment gateways for seamless transactions.</span>",
+    "link": "#"
   },
   {
     "id": 4,
-    "title": "<span style=\"color: #4CAF50;\">Investment Broker</span>",
-    "description": "<span style=\"color: #333;\">A platform for investment brokerage, allowing users to manage and track their investments, analyze market trends, and make informed decisions.</span>",
-    "link": "https://paystack.com/buy/mobile-apps-rtlkjk"
-  },
-  {
-    "id": 5,
-    "title": "<span style=\"color: #4CAF50;\">Bitcoin Mining</span>",
-    "description": "<span style=\"color: #333;\">A Bitcoin mining application with advanced algorithms for efficient mining operations, monitoring, and performance optimization.</span>",
-    "link": "https://paystack.com/buy/mobile-apps-rtlkjk"
-  },
-  {
-    "id": 6,
     "title": "<span style=\"color: #4CAF50;\">NFTs</span>",
     "description": "<span style=\"color: #333;\">An NFT (Non-Fungible Token) platform for buying, selling, and trading unique digital assets.<br>Includes secure blockchain technology for authenticity.</span>",
     "link": "https://paystack.com/buy/mobile-apps-rtlkjk"
   },
   {
+    "id": 5,
+    "title": "<span style=\"color: #4CAF50;\">Job Matching Platform</span>",
+    "description": "<span style=\"color: #333;\">Create a platform connecting job seekers with employers based on skills, preferences, and company culture.</span>",
+    "link": "#"
+  },
+  {
+    "id": 6,
+    "title": "<span style=\"color: #4CAF50;\">Investment Broker</span>",
+    "description": "<span style=\"color: #333;\">A platform for investment brokerage, allowing users to manage and track their investments, analyze market trends, and make informed decisions.</span>",
+    "link": "https://paystack.com/buy/mobile-apps-rtlkjk"
+  },
+  {
     "id": 7,
+    "title": "<span style=\"color: #4CAF50;\">Smart City Solutions</span>",
+    "description": "<span style=\"color: #333;\">Build applications addressing urban challenges, such as traffic management, waste disposal, and public services optimization.</span>",
+    "link": "#"
+  },
+  {
+    "id": 8,
+    "title": "<span style=\"color: #4CAF50;\">Language Learning Platform</span>",
+    "description": "<span style=\"color: #333;\">Create an interactive language learning platform with lessons, quizzes, and speech recognition for effective language acquisition.</span>",
+    "link": "#"
+  },
+  {
+    "id": 9,
+    "title": "<span style=\"color: #4CAF50;\">Real Estate Listing Platform</span>",
+    "description": "<span style=\"color: #333;\">Create a platform for real estate listings, including property details, virtual tours, and contact options for interested buyers or tenants.</span>",
+    "link": "#"
+  },
+  {
+    "id": 10,
+    "title": "<span style=\"color: #4CAF50;\">Task Management Application</span>",
+    "description": "<span style=\"color: #333;\">Develop a task management app that allows users to create, assign, and track tasks with collaboration features for teams.</span>",
+    "link": "#"
+  },
+  {
+    "id": 11,
+    "title": "<span style=\"color: #4CAF50;\">Event Management System</span>",
+    "description": "<span style=\"color: #333;\">Build an event planning and management system with features for organizing, promoting, and tracking events.</span>",
+    "link": "#"
+  },
+  {
+    "id": 12,
+    "title": "<span style=\"color: #4CAF50;\">Smart Home Automation</span>",
+    "description": "<span style=\"color: #333;\">Design an application that integrates with smart home devices for automated control of lighting, security, and climate.</span>",
+    "link": "#"
+  },
+  {
+    "id": 13,
+    "title": "<span style=\"color: #4CAF50;\">Online Banking Website</span>",
+    "description": "<span style=\"color: #333;\">A secure online banking platform providing various financial services, transaction history, and account management.</span>",
+    "link": "https://paystack.com/buy/mobile-apps-rtlkjk"
+  },
+  {
+    "id": 14,
+    "title": "<span style=\"color: #4CAF50;\">Virtual Reality (VR) Experience</span>",
+    "description": "<span style=\"color: #333;\">Create immersive VR applications for entertainment, education, or training purposes using cutting-edge technologies.</span>",
+    "link": "#"
+  },
+  {
+    "id": 15,
+    "title": "<span style=\"color: #4CAF50;\">Smart Home Automation</span>",
+    "description": "<span style=\"color: #333;\">Design an application that integrates with smart home devices for automated control of lighting, security, and climate.</span>",
+    "link": "#"
+  },
+  {
+    "id": 16,
+    "title": "<span style=\"color: #4CAF50;\">Healthcare Management System</span>",
+    "description": "<span style=\"color: #333;\">Develop a comprehensive system for healthcare facilities, including patient records, appointment scheduling, and prescription management.</span>",
+    "link": "#"
+  },
+  {
+    "id": 17,
+    "title": "<span style=\"color: #4CAF50;\">Augmented Reality (AR) Shopping App</span>",
+    "description": "<span style=\"color: #333;\">Implement an AR-powered shopping app allowing users to virtually try on clothes or visualize products in their homes before purchasing.</span>",
+    "link": "#"
+  },
+  {
+    "id": 18,
+    "title": "<span style=\"color: #4CAF50;\">Food Delivery App</span>",
+    "description": "<span style=\"color: #333;\">Design a food delivery application with real-time tracking, menu customization, and integrated payment options.</span>",
+    "link": "#"
+  },
+  {
+    "id": 19,
+    "title": "<span style=\"color: #4CAF50;\">Subscription Box Service</span>",
+    "description": "<span style=\"color: #333;\">Develop a platform for subscription box services, allowing users to customize their subscriptions and receive curated products.</span>",
+    "link": "#"
+  },
+  {
+    "id": 20,
+    "title": "<span style=\"color: #4CAF50;\">Social Networking App</span>",
+    "description": "<span style=\"color: #333;\">Develop a unique social networking app with personalized profiles, messaging, and content sharing features.</span>",
+    "link": "#"
+  },
+  {
+    "id": 21,
+    "title": "<span style=\"color: #4CAF50;\">Bitcoin Mining</span>",
+    "description": "<span style=\"color: #333;\">A Bitcoin mining application with advanced algorithms for efficient mining operations, monitoring, and performance optimization.</span>",
+    "link": "https://paystack.com/buy/mobile-apps-rtlkjk"
+  },
+  {
+    "id": 22,
     "title": "<span style=\"color: #4CAF50;\">Mobile Apps</span>",
     "description": "<span style=\"color: #333;\">Customized mobile applications tailored to meet specific user needs.<br>Featuring intuitive user interfaces and seamless functionality.</span>",
     "link": "https://paystack.com/buy/mobile-apps-rtlkjk"
+  },
+  {
+    "id": 23,
+    "title": "<span style=\"color: #4CAF50;\">Travel Booking Portal</span>",
+    "description": "<span style=\"color: #333;\">Design a platform for travel enthusiasts to book flights, hotels, and transportation services with user-friendly interfaces.</span>",
+    "link": "#"
+  },
+  {
+    "id": 24,
+    "title": "<span style=\"color: #4CAF50;\">Fitness Tracking App</span>",
+    "description": "<span style=\"color: #333;\">Build an app that tracks fitness activities, sets goals, and provides personalized workout plans with progress analytics.</span>",
+    "link": "#"
+  },
+  {
+    "id": 25,
+    "title": "<span style=\"color: #4CAF50;\">Mobile Apps</span>",
+    "description": "<span style=\"color: #333;\">Customized mobile applications tailored to meet specific user needs.<br>Featuring intuitive user interfaces and seamless functionality.</span>",
+    "link": "https://paystack.com/buy/mobile-apps-rtlkjk"
+  },
+  {
+    "id": 26,
+    "title": "<span style=\"color: #4CAF50;\">Food Delivery App</span>",
+    "description": "<span style=\"color: #333;\">Design a food delivery application with real-time tracking, menu customization, and integrated payment options.</span>",
+    "link": "#"
+  },
+  {
+    "id": 27,
+    "title": "<span style=\"color: #4CAF50;\">Subscription Box Service</span>",
+    "description": "<span style=\"color: #333;\">Develop a platform for subscription box services, allowing users to customize their subscriptions and receive curated products.</span>",
+    "link": "#"
+  },
+  {
+    "id": 28,
+    "title": "<span style=\"color: #4CAF50;\">Automated Stock Trading System</span>",
+    "description": "<span style=\"color: #333;\">Implement an AI-powered stock trading system with automated buying and selling based on market analysis and user-defined strategies.</span>",
+    "link": "#"
+  },
+  {
+    "id": 29,
+    "title": "<span style=\"color: #4CAF50;\">Healthcare Management System</span>",
+    "description": "<span style=\"color: #333;\">Develop a comprehensive system for healthcare facilities, including patient records, appointment scheduling, and prescription management.</span>",
+    "link": "#"
+  },
+  {
+    "id": 30,
+    "title": "<span style=\"color: #4CAF50;\">E-commerce Platform</span>",
+    "description": "<span style=\"color: #333;\">Create a robust e-commerce platform with features such as product catalog, secure transactions, and order management.<br>Integration with popular payment gateways for seamless transactions.</span>",
+    "link": "#"
   }
 ]
