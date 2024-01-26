@@ -636,6 +636,79 @@ document.addEventListener('DOMContentLoaded', () => {
         // Asynchronously load the initial projects
         loadInitialProjects();
 </script>
+
+<script>
+  // Paystack Payment Function
+function initiatePayment(projectId) {
+    // Assume you have a server endpoint for creating payment transactions
+    fetch('https://your-server.com/initiate-payment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ projectId }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Initialize Paystack inline payment
+        const paystackHandler = PaystackPop.setup({
+            key: 'your-paystack-public-key',
+            email: 'buyer@example.com',
+            amount: data.amount,
+            ref: data.reference,
+            currency: 'NGN', // Change this to your currency code
+            callback: function (response) {
+                // Handle successful payment here
+                handlePaymentSuccess(response, projectId);
+            },
+            onClose: function () {
+                // Handle closure of the payment modal
+            },
+        });
+
+        paystackHandler.openIframe();
+    })
+    .catch(error => console.error('Error initiating payment:', error));
+}
+
+function handlePaymentSuccess(response, projectId) {
+    // Assume you have a server endpoint for verifying payment success
+    fetch('https://your-server.com/verify-payment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ reference: response.reference }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // If payment is verified, send an email to maruhsoft@gmail.com
+        if (data.success) {
+            sendEmailNotification(projectId);
+        }
+    })
+    .catch(error => console.error('Error verifying payment:', error));
+}
+
+function sendEmailNotification(projectId) {
+    // Assume you have a server endpoint for sending email notifications
+    fetch('https://your-server.com/send-email-notification', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ projectId }),
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Email notification sent successfully.');
+        } else {
+            console.error('Failed to send email notification.');
+        }
+    })
+    .catch(error => console.error('Error sending email notification:', error));
+  }
+</script>
       
 <script type="text/javascript">
     function googleTranslateElementInit() {
