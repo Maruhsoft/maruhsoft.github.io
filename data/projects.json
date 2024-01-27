@@ -178,5 +178,23 @@
     "title": "Educational Platform",
     "description": "Develop an interactive e-learning platform with features such as course management, assessments, and collaboration tools. Ensure a user-friendly interface for both educators and learners.",
     "link": "#"
+  },
+  {
+    "id": 31,
+    "title": "Forex Trading Platform",
+    "description": "Build a sophisticated Forex trading platform with real-time market data, advanced charting tools, and seamless order execution. Implement risk management features and integrate popular payment gateways for secure transactions.",
+    "link": "#"
+  },
+  {
+    "id": 32,
+    "title": "Algorithmic Trading Bot",
+    "description": "Develop an algorithmic trading bot for automated Forex trading. Implement intelligent algorithms, risk mitigation strategies, and backtesting functionalities to optimize trading performance.",
+    "link": "#"
+  },
+  {
+    "id": 33,
+    "title": "Forex Signal Service",
+    "description": "Create a platform for providing Forex trading signals to users. Implement a reliable signal generation mechanism and user-friendly interface for subscribers to receive timely trading insights.",
+    "link": "#"
   }
 ]
