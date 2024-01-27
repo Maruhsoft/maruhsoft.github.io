@@ -226,16 +226,18 @@
     #scrollToTopBtn {
       display: none;
       position: fixed;
-      bottom: 20px;
+      bottom: 60px; /* Adjust the bottom value for elevation */
       right: 20px;
       background-color: #4CAF50;
       color: white;
       border: none;
-      border-radius: 5px;
-      padding: 10px;
-      font-size: 20px;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s, bottom 0.3s;
+      z-index: 1;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
 
     #scrollToTopBtn:hover {
@@ -785,6 +787,7 @@ function sendEmailNotification(projectId) {
 <script>
     document.addEventListener("DOMContentLoaded", function () {
       var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      var pageSection = document.querySelector(".page");
 
       window.onscroll = function () {
         scrollFunction();
@@ -799,8 +802,7 @@ function sendEmailNotification(projectId) {
       }
 
       scrollToTopBtn.addEventListener("click", function () {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
+        pageSection.scrollIntoView({ behavior: "smooth" });
       });
     });
 </script>
