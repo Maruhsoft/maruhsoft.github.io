@@ -166,13 +166,13 @@
     "title": "<span style=\"color: #4CAF50;\">E-commerce Platform</span>",
     "description": "<span style=\"color: #333;\">Create a robust e-commerce platform with features such as product catalog, secure transactions, and order management.<br>Integration with popular payment gateways for seamless transactions.</span>",
     "link": "#"
-  }
+  },
   {
   "id": 29,
   "title": "Courier Website",
   "description": "Create an efficient courier website enabling users to schedule, track, and manage shipments seamlessly. Real-time tracking, secure payment integration, and transparent delivery services are prioritized for a reliable user experience.",
   "link": "#"
-  }
+  },
   {
     "id": 30,
     "title": "Educational Platform",
