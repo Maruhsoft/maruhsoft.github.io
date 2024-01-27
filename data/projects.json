@@ -145,32 +145,38 @@
   },
   {
     "id": 25,
-    "title": "<span style=\"color: #4CAF50;\">Mobile Apps</span>",
-    "description": "<span style=\"color: #333;\">Customized mobile applications tailored to meet specific user needs.<br>Featuring intuitive user interfaces and seamless functionality.</span>",
-    "link": "https://paystack.com/buy/mobile-apps-rtlkjk"
-  },
-  {
-    "id": 26,
     "title": "<span style=\"color: #4CAF50;\">Food Delivery App</span>",
     "description": "<span style=\"color: #333;\">Design a food delivery application with real-time tracking, menu customization, and integrated payment options.</span>",
     "link": "#"
   },
   {
-    "id": 27,
+    "id": 26,
     "title": "<span style=\"color: #4CAF50;\">Subscription Box Service</span>",
     "description": "<span style=\"color: #333;\">Develop a platform for subscription box services, allowing users to customize their subscriptions and receive curated products.</span>",
     "link": "#"
   },
   {
-    "id": 28,
+    "id": 27,
     "title": "<span style=\"color: #4CAF50;\">Automated Stock Trading System</span>",
     "description": "<span style=\"color: #333;\">Implement an AI-powered stock trading system with automated buying and selling based on market analysis and user-defined strategies.</span>",
     "link": "#"
   },
   {
-    "id": 29,
+    "id": 28,
     "title": "<span style=\"color: #4CAF50;\">E-commerce Platform</span>",
     "description": "<span style=\"color: #333;\">Create a robust e-commerce platform with features such as product catalog, secure transactions, and order management.<br>Integration with popular payment gateways for seamless transactions.</span>",
+    "link": "#"
+  }
+  {
+  "id": 29,
+  "title": "Courier Website",
+  "description": "Create an efficient courier website enabling users to schedule, track, and manage shipments seamlessly. Real-time tracking, secure payment integration, and transparent delivery services are prioritized for a reliable user experience.",
+  "link": "#"
+  }
+  {
+    "id": 30,
+    "title": "Educational Platform",
+    "description": "Develop an interactive e-learning platform with features such as course management, assessments, and collaboration tools. Ensure a user-friendly interface for both educators and learners.",
     "link": "#"
   }
 ]
