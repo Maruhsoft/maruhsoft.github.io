@@ -222,6 +222,25 @@
     .project-container {
       margin-top: 20px; /* Added margin to separate search bar and projects */
     }
+
+    #scrollToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #scrollToTopBtn:hover {
+      background-color: #45a049;
+    }
     
   </style>
   <link rel="icon" href="images/favicon.png" type="image/png">
@@ -290,6 +309,9 @@
       </div>
       <br><br>
     </div>
+
+    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    
   </div>
 
   <!-- Projects Page -->
@@ -756,6 +778,29 @@ function sendEmailNotification(projectId) {
     })
     .catch(error => console.error('Error sending email notification:', error));
   }
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollToTopBtn.style.display = "block";
+        } else {
+          scrollToTopBtn.style.display = "none";
+        }
+      }
+
+      scrollToTopBtn.addEventListener("click", function () {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      });
+    });
 </script>
       
 <script type="text/javascript">
