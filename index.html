@@ -802,7 +802,10 @@ function sendEmailNotification(projectId) {
       }
 
       scrollToTopBtn.addEventListener("click", function () {
-        pageSection.scrollIntoView({ behavior: "smooth" });
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
       });
     });
 </script>
