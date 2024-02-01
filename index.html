@@ -303,6 +303,8 @@
         <!-- Weather information will be displayed here -->
       </div>
 
+      <div id="exchangeRate"></div>
+
       <!-- Contact Details -->
       <div class="contact-details">
         <p style="color: #4CAF50; margin-bottom: 0px;"><b>Connect with me:</b></p>
@@ -783,6 +785,21 @@ function sendEmailNotification(projectId) {
     .catch(error => console.error('Error sending email notification:', error));
   }
 </script>
+
+<script>
+        const apiKey = 'YOUR_API_KEY'; // Replace with your ExchangeRate-API key
+        const apiUrl = `https://open.er-api.com/v6/latest/${apiKey}`;
+
+        // Fetch daily exchange rates
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const exchangeRateElement = document.getElementById('exchangeRate');
+                exchangeRateElement.innerHTML = `<p>USD to EUR: ${data.rates.EUR}</p>`;
+                // Add more lines for other currency rates as needed
+            })
+            .catch(error => console.error('Error fetching exchange rates:', error));
+    </script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
