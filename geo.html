@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Geolocation & Permissions Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      background: #f0f2f5;
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    pre {
+      background: #e9ecef;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 20px;
+      white-space: pre-wrap;
+    }
+    iframe {
+      margin-top: 20px;
+      width: 100%;
+      height: 400px;
+      display: none;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📍 Geolocation with Permissions State</h2>
+  <button onclick="checkPermissionAndLocate()">Get Location</button>
+
+  <pre id="status">Click the button to request your location...</pre>
+  <iframe id="map"></iframe>
+
+  <script>
+    async function checkPermissionAndLocate() {
+      const status = document.getElementById('status');
+      const map = document.getElementById('map');
+
+      // Check permission state
+      let permissionState = 'unknown';
+      try {
+        const result = await navigator.permissions.query({ name: 'geolocation' });
+        permissionState = result.state;
+        status.textContent = `📜 Permission State: ${permissionState}\n\n`;
+      } catch (e) {
+        status.textContent = `⚠️ Could not read permissions API: ${e.message}\n\n`;
+      }
+
+      // Get location
+      if (!navigator.geolocation) {
+        status.textContent += '❌ Geolocation not supported by this browser.';
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        pos => {
+          const { latitude, longitude } = pos.coords;
+          status.textContent += `✅ Location retrieved:\nLatitude: ${latitude}\nLongitude: ${longitude}`;
+
+          const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${longitude-0.01},${latitude-0.01},${longitude+0.01},${latitude+0.01}&layer=mapnik&marker=${latitude},${longitude}`;
+          map.src = mapUrl;
+          map.style.display = 'block';
+        },
+        err => {
+          status.textContent += `❌ Error getting location:\n${err.message} (Code: ${err.code})`;
+          map.style.display = 'none';
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0
+        }
+      );
+    }
+  </script>
+
+</body>
+</html>
