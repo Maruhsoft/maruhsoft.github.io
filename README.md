@@ -1,64 +1,40 @@
-# Maruh Akporowho's Portfolio
+# Maruhsoft — Developer Portfolio
 
-Welcome to my portfolio website showcasing my skills and projects. Feel free to explore and connect!
+Personal portfolio and project index for **Maruh Akporowho**.
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Skills and Technologies](#skills-and-technologies)
-- [Projects](#projects)
-- [Contact](#contact)
+The portfolio brings together selected software projects, engineering interests, and ways to connect.
 
-## Introduction
-I'm **Maruh Akporowho**, a passionate tech enthusiast and developer. This portfolio highlights my expertise in various areas, including mobile app development, full-stack web development, cyber security, AI (machine learning), and more.
+## Selected projects
 
-## Skills and Technologies
-- Mobile App Development
-- Full Stack Web Development
-- Computer Networking
-- Cyber Security
-- Ethical Hacking
-- AI (Machine Learning)
-- Cloud Computing
-- Version Control (Git)
-- Repository (GitHub)
-- Database
-- Application Container (Docker)
-- Full Stack Web Frameworks
-- Frontend Web Frameworks
-- API Architecture (REST API)
-- Microservices Architecture
-- Pipelines (GitHub Actions)
-- Linux
+### [Exqpay](https://exqpay.com) — Crypto and gift-card platform
+A PHP-based platform for crypto-to-fiat workflows and gift-card trading. The public repository documents wallet and deposit processing, transaction accounting, conversions, withdrawals, and audit logging.
 
-Connect with me on [LinkedIn](https://www.linkedin.com/in/maruh-akporowho-647159124) and [GitHub](https://github.com/Maruhsoft).
+- [Public repository](https://github.com/Maruhsoft/exqpay_live)
 
-## Projects
-Explore some of my exciting projects and collaborations:
+### [University Education Management Portal](https://uemp-mvp.maruhsoft.workers.dev) — Academic workflow MVP
+A Cloudflare Workers application demonstrating student course registration, lecturer result entry, departmental review, and result publication.
 
-1. **Business Website**
-   - A professional website showcasing business services and information. Includes a user-friendly interface and responsive design.
+- [Source code](https://github.com/Maruhsoft/UEMP)
+- [Architecture](https://github.com/Maruhsoft/UEMP/tree/main/docs)
 
-2. **Online Banking Website**
-   - A secure online banking platform providing various financial services, transaction history, and account management.
+### [Secure Multi-Tenant API System](https://github.com/Maruhsoft/secure-multi-tenant-API-system) — Architecture blueprint
+A design-oriented project covering tenant isolation, authentication and authorization, API security, auditability, integrations, and operational concerns.
 
-3. **Courier Website**
-   - An efficient courier service website with real-time tracking, order processing, and delivery management.
+## Engineering interests
 
-4. **Investment Broker**
-   - A platform for investment brokerage, allowing users to manage and track their investments, analyze market trends, and make informed decisions.
+- Backend and full-stack application development
+- API and service architecture
+- Authentication, authorization, and application security
+- Financial workflows and transaction integrity
+- Relational data modelling and integrations
+- Automated testing and deployment operations
 
-5. **Bitcoin Mining**
-   - A Bitcoin mining application with advanced algorithms for efficient mining operations, monitoring, and performance optimization.
+## Connect
 
-6. **NFTs (Non-Fungible Tokens)**
-   - An NFT platform for buying, selling, and trading unique digital assets. Includes secure blockchain technology for authenticity.
+- **GitHub:** [@Maruhsoft](https://github.com/Maruhsoft)
+- **LinkedIn:** [Maruh Akporowho](https://www.linkedin.com/in/maruh-akporowho-647159124)
+- **Email:** [maruhsoft@gmail.com](mailto:maruhsoft@gmail.com)
 
-7. **Mobile Apps**
-   - Customized mobile applications tailored to meet specific user needs, featuring intuitive user interfaces and seamless functionality.
+---
 
-## Contact
-Feel free to reach out to me. Let's connect and discuss opportunities.
-
-- LinkedIn: [Maruh Akporowho](https://www.linkedin.com/in/maruh-akporowho-647159124)
-- GitHub: [Maruhsoft](https://github.com/Maruhsoft)
-- Email: maruhsoft@gmail.com
+*Building useful software with an emphasis on clear architecture, dependable workflows, and maintainable systems.*
