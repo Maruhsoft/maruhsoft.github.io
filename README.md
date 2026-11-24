@@ -1,6 +1,6 @@
 # Maruhsoft — Developer Portfolio
 
-Personal portfolio and project index for **Maruh Akporowho**.
+Personal portfolio and project index for **Maruh Akporowho**. The canonical portfolio is [vulcancodeworks.org](https://vulcancodeworks.org/).
 
 The portfolio brings together selected software projects, engineering interests, and ways to connect.
 
